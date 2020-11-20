@@ -1,19 +1,19 @@
-# Ansible-AdHoc-Commands
+### Ansible-AdHoc-Commands
 
-## Environment
-### Use ansible with the -a argument ‘hostname’ to run hostname against all the servers: 
+#### Environment
+##### Use ansible with the -a argument ‘hostname’ to run hostname against all the servers: 
 ```
 $ ansible all -a "hostname"
 ```
-### Run the same command again, but this time, add the argument -f 1 to tell Ansible to use only one fork (basically, to perform the command on each server in sequence):
+##### Run the same command again, but this time, add the argument -f 1 to tell Ansible to use only one fork (basically, to perform the command on each server in sequence):
 ```
 $ ansible all -a "hostname" -f 1
 ```
-### Disk space available for our application:
+##### Disk space available for our application:
 ```
 $ ansible all -a "df -h"
 ```
-### Enough memory on our servers: 
+##### Enough memory on our servers: 
 ```
 $ ansible all -a "free -m"
 ```
