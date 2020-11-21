@@ -9,3 +9,11 @@ Some operations take a lot of time to finish (minutes or even hours). For exampl
 ```
 $ ansible all -b -B 3600 -P 0 -a "yum update -y"
 ```
+
+#### Update servers asynchronously with asynchronous jobs Let’s run `yum -y update` on all our servers to get them up to date. If you set -P 0, Ansible fires off the command on the servers, then prints the background job information to the screen and exits:
+While the background task is running, you can check on the status elsewhere using Ansible’s async_status module, as long as you have the ansible_job_id value to pass in as jid: 
+```
+$ ansible all -b -m async_status -a "jid=1234.1234"
+```
+
+
